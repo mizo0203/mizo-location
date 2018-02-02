@@ -13,31 +13,26 @@
  * limitations under the License.
  */
 
-package com.mizo0203.lilywhite.push_task;
+package com.mizo0203.location;
 
-import com.mizo0203.lilywhite.domain.UseCase;
+import com.mizo0203.location.domain.UseCase;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.logging.Logger;
 
-public class ReminderTaskServlet extends HttpServlet {
+public class PushTaskServlet extends HttpServlet {
   public static final String PARAM_NAME_SOURCE_ID = "param_name_source_id";
   public static final String PARAM_NAME_MESSAGE = "param_name_message";
-  private static final Logger LOG = Logger.getLogger(ReminderTaskServlet.class.getName());
-  private UseCase mUseCase;
+  private static final Logger LOG = Logger.getLogger(PushTaskServlet.class.getName());
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-    mUseCase = new UseCase();
-    try {
+    try (UseCase useCase = new UseCase()) {
       String source_id = req.getParameter(PARAM_NAME_SOURCE_ID);
       String message = req.getParameter(PARAM_NAME_MESSAGE);
-      //      mUseCase.pushReminderMessage(source_id, message);
-      //      mUseCase.initSource(source_id);
-    } finally {
-      mUseCase.close();
+      useCase.pushReminderMessage(source_id, message);
     }
   }
 }

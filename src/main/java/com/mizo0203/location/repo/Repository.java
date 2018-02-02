@@ -1,6 +1,6 @@
-package com.mizo0203.lilywhite.repo;
+package com.mizo0203.location.repo;
 
-import com.mizo0203.lilywhite.repo.objectify.entity.KeyEntity;
+import com.mizo0203.location.repo.objectify.entity.KeyEntity;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
@@ -24,7 +24,7 @@ public class Repository {
     mPushQueueRepository.destroy();
   }
 
-  private void deleteReminderTask() {
+  public void deleteReminderTask() {
     String taskName = getKey("taskName");
     if (taskName == null || taskName.isEmpty()) {
       return;
@@ -69,7 +69,7 @@ public class Repository {
       mOfyRepository.saveKeyEntity(keyEntity);
     }
     if (keyEntity.value.isEmpty()) {
-      LOG.severe(key + " isEmpty");
+      LOG.severe(key + " isEmpty"); // TODO: 正常系ログ
     }
     return keyEntity.value;
   }

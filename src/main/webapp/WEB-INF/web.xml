@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>mailhandler</servlet-name>
-        <servlet-class>com.appspot.mizo310ki.MailHandlerServlet</servlet-class>
+        <servlet-class>com.mizo0203.location.MailHandlerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>mailhandler</servlet-name>
@@ -29,12 +29,12 @@
     <!-- [START Push Task] -->
     <!-- https://cloud.google.com/appengine/docs/standard/java/taskqueue/push/ -->
     <servlet>
-        <servlet-name>reminder_task</servlet-name>
-        <servlet-class>com.mizo0203.lilywhite.push_task.ReminderTaskServlet</servlet-class>
+        <servlet-name>push_task</servlet-name>
+        <servlet-class>com.mizo0203.location.PushTaskServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>reminder_task</servlet-name>
-        <url-pattern>/push_task/reminder_task</url-pattern>
+        <servlet-name>push_task</servlet-name>
+        <url-pattern>/push_task/*</url-pattern>
     </servlet-mapping>
 
     <!-- https://cloud.google.com/appengine/docs/standard/java/config/cron#securing_urls_for_cron -->
@@ -58,6 +58,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <listener>
-        <listener-class>com.mizo0203.lilywhite.repo.objectify.OfyHelper</listener-class>
+        <listener-class>com.mizo0203.location.repo.objectify.OfyHelper</listener-class>
     </listener>
 </web-app>

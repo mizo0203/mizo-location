@@ -1,4 +1,4 @@
-package com.mizo0203.lilywhite.util;
+package com.mizo0203.location.util;
 
 import org.apache.commons.io.IOUtils;
 

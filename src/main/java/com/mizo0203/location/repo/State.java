@@ -1,4 +1,4 @@
-package com.mizo0203.lilywhite.repo;
+package com.mizo0203.location.repo;
 
 public enum State {
   NO_REMINDER_MESSAGE, //

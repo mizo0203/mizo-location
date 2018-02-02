@@ -1,8 +1,8 @@
-package com.mizo0203.lilywhite.repo.objectify.entity;
+package com.mizo0203.location.repo.objectify.entity;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-import com.mizo0203.lilywhite.repo.objectify.OfyHelper;
+import com.mizo0203.location.repo.objectify.OfyHelper;
 
 /**
  * The @Entity tells Objectify about our entity. We also register it in {@link OfyHelper} Our

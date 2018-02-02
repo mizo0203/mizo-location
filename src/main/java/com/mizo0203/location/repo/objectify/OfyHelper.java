@@ -1,7 +1,7 @@
-package com.mizo0203.lilywhite.repo.objectify;
+package com.mizo0203.location.repo.objectify;
 
 import com.googlecode.objectify.ObjectifyService;
-import com.mizo0203.lilywhite.repo.objectify.entity.KeyEntity;
+import com.mizo0203.location.repo.objectify.entity.KeyEntity;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

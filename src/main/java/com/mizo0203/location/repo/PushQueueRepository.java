@@ -1,9 +1,9 @@
-package com.mizo0203.lilywhite.repo;
+package com.mizo0203.location.repo;
 
 import com.google.appengine.api.taskqueue.Queue;
 import com.google.appengine.api.taskqueue.QueueFactory;
 import com.google.appengine.api.taskqueue.TaskOptions;
-import com.mizo0203.lilywhite.push_task.ReminderTaskServlet;
+import com.mizo0203.location.PushTaskServlet;
 
 import javax.annotation.Nonnull;
 import java.util.logging.Logger;
@@ -38,8 +38,8 @@ import java.util.logging.Logger;
     return mQueue
         .add(
             TaskOptions.Builder.withUrl("/push_task/reminder_task")
-                .param(ReminderTaskServlet.PARAM_NAME_SOURCE_ID, source_id)
-                .param(ReminderTaskServlet.PARAM_NAME_MESSAGE, message)
+                .param(PushTaskServlet.PARAM_NAME_SOURCE_ID, source_id)
+                .param(PushTaskServlet.PARAM_NAME_MESSAGE, message)
                 .etaMillis(etaMillis))
         .getName();
   }

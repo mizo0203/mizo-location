@@ -1,6 +1,6 @@
-package com.appspot.mizo310ki;
+package com.mizo0203.location;
 
-import com.mizo0203.lilywhite.domain.UseCase;
+import com.mizo0203.location.domain.UseCase;
 
 import javax.mail.Address;
 import javax.mail.MessagingException;
