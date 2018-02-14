@@ -29,7 +29,7 @@ public class UseCase implements Closeable {
         onEnter(message);
         break;
       case "exit":
-        onExit(message);
+        onExit();
         break;
       default:
         break;
@@ -42,7 +42,7 @@ public class UseCase implements Closeable {
     mRepository.enqueueReminderTask("", etaMillis, subject);
   }
 
-  private void onExit(MimeMessage message) {
+  private void onExit() {
     mRepository.deleteReminderTask();
   }
 

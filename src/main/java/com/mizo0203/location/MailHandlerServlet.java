@@ -35,9 +35,11 @@ public class MailHandlerServlet extends HttpServlet {
       LOG.info("Subject: " + message.getSubject());
 
       try (UseCase useCase = new UseCase()) {
-        //        if (addresses[0].toString().indexOf("noreply@insideicloud.icloud.com") != -1) {
-        useCase.onReceiveMizoLocationMail(name, message);
-        //        }
+        for (Address address : addresses) {
+          if (address.toString().contains("noreply@email.apple.com")) {
+            useCase.onReceiveMizoLocationMail(name, message);
+          }
+        }
       }
 
     } catch (MessagingException e) {
